@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Practice</title>
+    <link rel="stylesheet" href="style.css" rel="stylesheet">
+  </head>
+
+  <body ng-app>
+    <div class="menu">
+      <h1>Pick Your Order</h1>
+      <ul>
+        <li><input type="radio" ng-click="active='Epresso'">Epresso</input></li>
+        <li><input type="radio" ng-click="active='Latte'">Latte</input></li>
+        <li><input type="radio" ng-click="active='Cappuccino'">Cappuccino</input></li>
+        <li><input type="radio" ng-click="active='Mocha'">Mocha</input></li>
+        <li><input type="radio" ng-click="active='Americano'">Americano</input></li>
+      </ul>
+      <hr>
+      <p class="info" ng-hide="active">Please click a menu item</p>
+      <p class="info" ng-show="active">You chose <b>{{ active }}</b></p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+.menu {
+  margin: 0 auto;
+  width: 320px;
+  height: 450px;
+  background-color: #f0bb29;
+  padding: 20px;
+}
+h1 {
+  color: #223f4a;
+  text-align: center;
+}
+ul {
+  list-style: none;
+}
+li {
+  padding: 10px;
+
+}
+input {
+  font-size: 18px;
+}
+.info {
+  text-align: center;
+  font-size: 22px;
+  margin-top: 40px;
+}

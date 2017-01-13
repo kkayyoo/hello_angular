@@ -6,26 +6,26 @@
     <link rel="stylesheet" href="style.css" rel="stylesheet">
   </head>
 
-  <body ng-app>
-    <div class="menu">
+  <body ng-app="myApp">
+    <div class="menu" ng-controller="OrderMenuController">
       <h1>Pick Your Order</h1>
       <ul>
-        <li><input type="checkbox" ng-click="active='Epresso'">Epresso</input></li>
-        <li><input type="checkbox" ng-click="active='Latte'">Latte</input></li>
-        <li><input type="checkbox" ng-click="active='Cappuccino'">Cappuccino</input></li>
-        <li><input type="checkbox" ng-click="active='Mocha'">Mocha</input></li>
-        <li><input type="checkbox" ng-click="active='Americano'">Americano</input></li>
+        <li ng-repeat="coffee in products" ng-click="toggleActive(coffee)" ng-class="{active:coffee.active}">
+          <input type="checkbox">{{ coffee.name }} <span>{{ coffee.price | currency }}</span></input>
+        </li>
       </ul>
       <hr>
-      <p class="info" ng-hide="active">Please click a menu item</p>
-      <p class="info" ng-show="active">You chose <b>{{ active }}</b></p>
+      <p class="info">Your Total Price is: <span>{{ total() | currency }}</p>
     </div>
     <!-- Include jQuery from Google's CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Include Angularjs from Google's CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <!-- AngularJs -->
+    <script src="app.js" type="text/javascript"></script>
+    <script src="controller.js" type="text/javascript"></script>
     <!-- custom javascript -->
-    <script src="menu.js" type="text/javascript">
+    <script src="menu.js" type="text/javascript"></script>
 
     </script>
   </body>
